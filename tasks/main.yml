@@ -44,6 +44,16 @@
   notify: restart dhcp
   tags: dhcp
 
+- name: Install defaults file
+  template:
+    src: etc_default_isc-dhcp-server.j2
+    dest: "{{ dhcp_defaults }}"
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart dhcp
+  tags: dhcp
+
 - name: "Ensure service is {{ dhcp_global_server_state | default('started') }}"
   service:
     name: "{{ dhcp_service }}"

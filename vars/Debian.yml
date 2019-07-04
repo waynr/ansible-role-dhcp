@@ -10,4 +10,6 @@ dhcp_config: /etc/dhcp/dhcpd.conf
 
 dhcp_service: isc-dhcp-server
 
+dhcp_defaults: /etc/default/isc-dhcp-server
+
 dhcp_apparmor_policy: /etc/apparmor.d/usr.sbin.dhcpd
