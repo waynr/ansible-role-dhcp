@@ -173,6 +173,11 @@ subnet {{ subnet.ip }} netmask {{ subnet.netmask }} {
 {% if subnet.routers is defined %}
   option routers {{ subnet.routers }};
 {% endif %}
+{% if subnet.other_options is defined %}
+{% for option in subnet.other_options %}
+  option {{ option }};
+{% endfor %}
+{% endif %}
 {% if subnet.subnet_mask is defined %}
   option subnet-mask {{ subnet.subnet_mask }};
 {% endif %}
